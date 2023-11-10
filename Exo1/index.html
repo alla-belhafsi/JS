@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .body {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .carre {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            height: 200px;
+            width: 200px;
+            margin: 200px 0px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(136, 174, 136);
+            font-family: 'Times New Roman';
+            font-size: 40px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body class="body">
+    
+    <!-- Le carré avec un événement onclick -->
+    <div class="carre">Texte</div>
+    
+    <!-- JavaScript -->
+    <script>
+        // Sélection de l'élément .carre
+        var carreElement = document.querySelector('.carre');
+
+        // Ajout d'un écouteur d'événements au clic sur le carré
+        carreElement.addEventListener('click', function() {
+            afficherProprietes();
+        });
+
+        // Fonction pour afficher les propriétés du carré
+        function afficherProprietes() {
+            // Récupération des styles calculés du carré
+            var style = window.getComputedStyle(document.querySelector('.carre'));
+            
+            // Création d'un objet contenant les propriétés à afficher
+            var proprietes = {
+                "- Background Color ": style.getPropertyValue('background-color'),
+                "- Color ": style.getPropertyValue('color'),
+                "- Height ": style.getPropertyValue('height'),
+                "- Width ": style.getPropertyValue('width'),
+                "- Display ":style.getPropertyValue('display'),
+                "- Display":style.getPropertyValue('font-family') + " (" + style.getPropertyValue('font-size') + ")",
+            };
+    
+            // Construction du message à afficher dans l'alerte
+            var message = "Class .carre:\n";
+            for (var prop in proprietes) {
+                message += prop + ": " + proprietes[prop] + "\n";
+            }
+    
+            // Affichage des propriétés dans une boîte d'alerte
+            alert(message);
+        }
+    </script>
+
+</body>
+</html>
