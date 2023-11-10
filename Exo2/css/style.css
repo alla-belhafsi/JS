@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman';
+}
+
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.carre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    color: #fff;
+    background-color: rgb(136, 174, 136);
+    font-size: 40px;
+    line-height: 75px;
+    margin: 5px;
+    animation: appear 1s;
+    cursor: pointer;
+    transition: background-color 0.8s, color 0.8s, transform 0.8s;
+}
+
+.carre-clicked {
+    Display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    background-color: rgb(174, 136, 136);
+    color: rgb(76, 76, 255);
+    transform: rotate(360deg) scale(0.9);
+}
