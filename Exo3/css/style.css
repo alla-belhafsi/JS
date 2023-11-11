@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Permanent+Marker&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.body h1 {
+    font-family: "Dancing Script";
+    font-size: 56px;
+    margin: 10px;
+    cursor: default;
+}
+
+.body h1 fw {
+    color:rgb(255, 55, 55)
+}
+.body h1 sw {
+    color:rgb(255, 255, 55)
+}
+.body h1 tw {
+    color:rgb(55, 255, 55)
+}
+
+#statusBoard {
+    display: flex;
+    flex-direction: row;
+}
+
+#gameStatus {
+    font-family: "Permanent Marker";
+    font-size: 24px;
+    color: rgb(55, 255, 255);
+}
+
+.buttonReplay {
+    display: inline-block;
+    margin: 0px 10px;
+    cursor: pointer;
+    font-family: "Permanent Marker";
+    font-size: 24px;
+    border: none;
+    text-decoration: none;
+    outline: none;
+    color: rgb(55, 255, 255);
+    background-color: transparent;
+    transition: transform 0.74s;
+}
+
+.buttonReplay:hover {
+    transform: scale(1.2);
+}
+
+.body img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Image couvre tout le body */
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place l'image en arrière-plan par rapport au reste du contenu */
+}
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 200px);
+    gap: 5px; /* Espacement entre les cases */
+    margin: 10px;
+    z-index: 1; /* Place le contenu au-dessus de l'image de fond */
+}
+
+.grid-item {
+    width: 200px;
+    height: 200px;
+    background-color:rgba(0, 0, 0, 0.2);; /* Couleur noire avec une opacité */
+    backdrop-filter: blur(5px); /* Ajoute un flou */
+    border: 1px solid rgb(255, 255, 55); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 56px;
+    cursor: pointer;
+}
+
+.grid-item.x::before {
+    content: "X";
+    color: rgb(255, 55, 55);
+}
+
+.grid-item.o::before {
+    content: "O";
+    color: rgb(55, 255, 55);
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.blinking {
+    animation: blink 1.36s infinite; /* La classe clignotante */
+}
