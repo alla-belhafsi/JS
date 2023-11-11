@@ -38,17 +38,22 @@
 
 #gameStatus {
     font-family: "Permanent Marker";
-    font-size: 24px;
+    font-size: 30px;
+    cursor: default;
     color: rgb(55, 255, 255);
+    -webkit-text-stroke: 2px #000;/* Contour des lettres de 2 px de couleur noire */
+    margin: 0px 10px;
 }
 
 .buttonReplay {
     display: inline-block;
+    border: 1px solid rgb(55, 255, 255);
+    border-radius: 5px;
+    padding: 0px 10px;
     margin: 0px 10px;
     cursor: pointer;
     font-family: "Permanent Marker";
     font-size: 24px;
-    border: none;
     text-decoration: none;
     outline: none;
     color: rgb(55, 255, 255);

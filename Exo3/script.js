@@ -18,24 +18,33 @@ document.addEventListener("DOMContentLoaded", function () {
         // Récupére l'élément de la grille individuel
         var gridItem = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
 
-        // Retirez toutes les classes correspondant aux joueurs
+        // Retire toutes les classes correspondant aux joueurs
         gridItem.classList.remove("x", "o");
 
-        // Ajoutez la classe correspondant au joueur actuel
+        // Ajoute la classe correspondant au joueur actuel
         gridItem.classList.add(currentPlayer.toLowerCase());
         
-        // Supprimez le contenu de la case
+        // Supprime le contenu de la case
         gridItem.textContent = "";
         
         // Vérifie s'il y a un gagnant
         if (checkWinner()) {
             gameStatusElement.innerText = `Le joueur ${currentPlayer} a gagné !`;
             gameOver = true; // Marque le jeu comme terminé
+
+            // Ajoute la classe clignotante à l'élément du statut du jeu
+            gameStatusElement.classList.add("blinking");
         } else if (movesCount === 9) {
             gameStatusElement.innerText = "Partie terminée. Match nul !";
             gameOver = true; // Marque le jeu comme terminé en cas d'égalité
+            
+            // Ajoute la classe clignotante à l'élément du statut du jeu
+            gameStatusElement.classList.add("blinking");
         } else {
             currentPlayer = currentPlayer === "X" ? "O" : "X"; // Passe au prochain joueur
+
+            // Actualise le message indiquant le tour du joueur
+            gameStatusElement.innerText = `C'est au tour de Player ${currentPlayer}`;
         }
     }
     
