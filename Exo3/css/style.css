@@ -91,7 +91,7 @@
 .grid-item {
     width: 200px;
     height: 200px;
-    background-color:rgba(0, 0, 0, 0.2);; /* Couleur noire avec une opacité */
+    background-color:rgba(0, 0, 0, 0.2); /* Couleur noire avec une opacité */
     backdrop-filter: blur(5px); /* Ajoute un flou */
     border: 1px solid rgb(255, 255, 55); 
     display: flex;
